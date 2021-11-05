@@ -4,7 +4,7 @@ import fasttext
 def classifier(df, model_, threshold):
     """
     文本分类器
-    输出分类结果，1是接手，0是忽略
+    输出分类结果
     :param text: 输入的告警文本
     :param model_: 训练好的模型
     :param threshold: 二分类判定概率阈值
@@ -19,7 +19,6 @@ def classifier(df, model_, threshold):
         cancel_probability = model.predict(text)[1][0]  # result = [label, probability]
         handle_probability = abs(1-cancel_probability)
 
-        # 根据阈值来判断是否会被接手
         if handle_probability > threshold:
             handle_status = 1
         else:
