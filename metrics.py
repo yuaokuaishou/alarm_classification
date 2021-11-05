@@ -18,6 +18,6 @@ def evaluation(label, pre_label):
             else:
                 FF += 1
 
-    recall = TT / (TT + TF)  # 正确告警的网络异常数目 / (正确告警的网络异常数目 + 漏报网络异常数目)
-    precision = TT / (TT + FT)  # 正确告警的网络异常数目 / (正确告警的网络异常数目 + 误报CASE数目)， 忽略负向检测
+    recall = TT / (TT + TF)
+    precision = TT / (TT + FT)
     return recall, precision
