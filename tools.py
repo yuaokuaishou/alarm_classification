@@ -30,11 +30,7 @@ def time_to_zero_stamp(time_):
 
 
 def cut_week_to_days(data):
-    """
-    把一周的数据切分为每天的数据
-    :param data: 原始数据或者增加了结果的数据都可以
-    :return: 每一天的Dataframe
-    """
+
     # 所有的时间戳变为列表
     time_list = data['event_time'].tolist()
 
